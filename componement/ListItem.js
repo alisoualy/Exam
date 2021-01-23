@@ -8,8 +8,10 @@ const ListItem = ({item, deleteItem}) => {
   return(
     <TouchableOpacity style={styles.listItem}>
       <View style={styles.listItemView}>
-          <Text style={styles.listItemText}>{item.text}</Text>
-          <Button title="x" name="remove" color="firebrick" onPress = {() => deleteItem(item.id)}>x</Button>
+          <Text style={styles.listItemText}>Name:{item.text}</Text>
+          <Text style={styles.listItemText}>Prix:{item.prix}</Text>
+          <Text style={styles.listItemText}>qte:{item.qte}</Text>
+          <Button title="x" name="remove" color="firebrick" onPress={() => deleteItem(item.id)}>x</Button>
      </View>
     </TouchableOpacity>
   );

@@ -5,13 +5,19 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native
 const AddItem = ({props, addItem}) => {
 
     const [text, setText] = useState('');
+    const [prix, setPrix] = useState('');
+    const [qte, setQte] = useState('');
 
    const onchange = TextValue => setText(TextValue);
+   const onchange1 = TextValue => setPrix(TextValue);
+   const onchange2 = TextValue => setQte(TextValue);
 
   return(
     <View>
-        <TextInput placeholder = "Add Item" style={styles.input} onChangeText={onchange}></TextInput>
-        <TouchableOpacity style={styles.btn} onPress={() => addItem(text)}>
+        <TextInput placeholder = "Nom produit" style={styles.input} onChangeText={onchange}></TextInput>
+        <TextInput placeholder = "prix produit" style={styles.input} onChangeText={onchange1}></TextInput>
+        <TextInput placeholder = "quantité produit" style={styles.input} onChangeText={onchange2}></TextInput>
+        <TouchableOpacity style={styles.btn} onPress={() => addItem(text,prix,qte)}>
             <Text style={styles.btnText}>Add Item</Text>
         </TouchableOpacity>
     </View>
